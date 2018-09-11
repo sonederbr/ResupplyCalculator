@@ -1,0 +1,6 @@
+﻿{
+  "Configuration": {
+    "ConsoleName": "SW - Starship",
+    "SwApiUrl": "https://swapi.co/api/starships"
+  }
+}

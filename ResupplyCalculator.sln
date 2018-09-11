@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2019
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{3D99DCEF-B347-4119-A1C4-C9AE065FE231}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Services", "2 - Services", "{984D7F9E-C250-4E7E-839D-46A9B91E250B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Application", "3 - Application", "{C79401B4-A295-4B4E-B12E-45EDF3A94BDB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Domain", "4 - Domain", "{AFCE69C5-2685-4520-BB28-321DCEBAC80E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Infra", "5 - Infra", "{89327345-9B84-42D0-9645-FDA90A53728A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.1 - Data", "5.1 - Data", "{1BACE6D9-3F74-4780-9C0E-06FC95242735}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.2 - CrossCutting", "5.2 - CrossCutting", "{9E09B890-3A33-4456-88A7-A6A86DEA3402}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResupplyCalculator.Infra.Data", "ResupplyCalculator.Infra.Data\ResupplyCalculator.Infra.Data.csproj", "{0B70AB1C-8C95-46FA-95A1-764A9139A2C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResupplyCalculator.Infra.CrossCutting.IoC", "ResupplyCalculator.Infra.CrossCutting.IoC\ResupplyCalculator.Infra.CrossCutting.IoC.csproj", "{D66249AA-BC24-4DE1-94D4-C4FB6D5316D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResupplyCalculator.Domain", "ResupplyCalculator.Domain\ResupplyCalculator.Domain.csproj", "{912589D1-E047-4AA7-9478-2D242A4971FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResupplyCalculator.Application", "ResupplyCalculator.Application\ResupplyCalculator.Application.csproj", "{B53B86B7-E3EA-43CF-A4BF-8F66DB8F8FF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResupplyCalculator.UI", "ResupplyCalculator.UI\ResupplyCalculator.UI.csproj", "{D12B330F-1469-4119-A8D3-4C4D8692C3C1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B70AB1C-8C95-46FA-95A1-764A9139A2C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B70AB1C-8C95-46FA-95A1-764A9139A2C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B70AB1C-8C95-46FA-95A1-764A9139A2C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B70AB1C-8C95-46FA-95A1-764A9139A2C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D66249AA-BC24-4DE1-94D4-C4FB6D5316D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D66249AA-BC24-4DE1-94D4-C4FB6D5316D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D66249AA-BC24-4DE1-94D4-C4FB6D5316D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D66249AA-BC24-4DE1-94D4-C4FB6D5316D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{912589D1-E047-4AA7-9478-2D242A4971FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{912589D1-E047-4AA7-9478-2D242A4971FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{912589D1-E047-4AA7-9478-2D242A4971FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{912589D1-E047-4AA7-9478-2D242A4971FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B53B86B7-E3EA-43CF-A4BF-8F66DB8F8FF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B53B86B7-E3EA-43CF-A4BF-8F66DB8F8FF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B53B86B7-E3EA-43CF-A4BF-8F66DB8F8FF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B53B86B7-E3EA-43CF-A4BF-8F66DB8F8FF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D12B330F-1469-4119-A8D3-4C4D8692C3C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D12B330F-1469-4119-A8D3-4C4D8692C3C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D12B330F-1469-4119-A8D3-4C4D8692C3C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D12B330F-1469-4119-A8D3-4C4D8692C3C1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1BACE6D9-3F74-4780-9C0E-06FC95242735} = {89327345-9B84-42D0-9645-FDA90A53728A}
+		{9E09B890-3A33-4456-88A7-A6A86DEA3402} = {89327345-9B84-42D0-9645-FDA90A53728A}
+		{0B70AB1C-8C95-46FA-95A1-764A9139A2C2} = {1BACE6D9-3F74-4780-9C0E-06FC95242735}
+		{D66249AA-BC24-4DE1-94D4-C4FB6D5316D0} = {9E09B890-3A33-4456-88A7-A6A86DEA3402}
+		{912589D1-E047-4AA7-9478-2D242A4971FC} = {AFCE69C5-2685-4520-BB28-321DCEBAC80E}
+		{B53B86B7-E3EA-43CF-A4BF-8F66DB8F8FF2} = {C79401B4-A295-4B4E-B12E-45EDF3A94BDB}
+		{D12B330F-1469-4119-A8D3-4C4D8692C3C1} = {3D99DCEF-B347-4119-A1C4-C9AE065FE231}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1289F645-2FEC-4223-80E3-96741E5F94AF}
+	EndGlobalSection
+EndGlobal

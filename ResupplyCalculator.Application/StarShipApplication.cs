@@ -13,32 +13,43 @@ namespace ResupplyCalculator.Application
 
         public void Run()
         {
+            Console.WriteLine("Input the MGLT distance for calculate supply:"); 
+            if (long.TryParse(Console.ReadLine(), out var distanceMGLT))
+                CalculateDistance(distanceMGLT);
+            else
+                InputDistance();
+
+            Console.ReadLine();
+        }
+
+        private void InputDistance()
+        {
+            Console.WriteLine("MGLT distance must be only number.");
+            Console.WriteLine("Input the MGLT distance for calculate supply:"); 
+            if (long.TryParse(Console.ReadLine(), out var distanceMGLT))
+                CalculateDistance(distanceMGLT);
+            else
+                InputDistance();
+        }
+
+        private void CalculateDistance(long distanceMGLT)
+        {
             Console.WriteLine("Getting all Starships. Waiting a moment please.\n");
             var allStarShip = _repository.GetAll();
-            if (allStarShip.Count() == 0)
+            if (!allStarShip.Any())
             {
-                Console.WriteLine("Error. Press enter to close...");
+                Console.WriteLine("Error getting Starships. Press enter to close...\n");
                 Console.ReadLine();
                 return;
             }
 
-            Console.WriteLine("Done.\n");
-
-            Console.WriteLine("Input the distance for calculate supply:");
-            if (long.TryParse(Console.ReadLine(), out long distanceMGLT))
+            foreach (var starship in allStarShip)
             {
-                foreach (var starship in allStarShip)
-                {
-                    var consumable = starship.CalculateConsumable(distanceMGLT);
-                    var consumableVerified = consumable == -1 ? "Unknown" : consumable.ToString();
-                    Console.WriteLine($"{starship.Name}: {consumableVerified}");
-                }
-                Console.WriteLine("\nDone.\nPress enter to close...");
+                var consumable = starship.CalculateConsumable(distanceMGLT);
+                var consumableVerified = consumable == -1 ? "Unknown" : consumable.ToString();
+                Console.WriteLine($"{starship.Name}: {consumableVerified}");
             }
-            else
-                Console.WriteLine("Input MGLT must be only number.");
-
-            Console.ReadLine();
+            Console.WriteLine("\nDone.\nPress enter to close...");
         }
     }
 }

@@ -15,11 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Domain\" />
-    <Folder Include="Application\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\ResupplyCalculator.Application\ResupplyCalculator.Application.csproj" />
     <ProjectReference Include="..\ResupplyCalculator.CrossCutting.Mapper\ResupplyCalculator.CrossCutting.Mapper.csproj" />
     <ProjectReference Include="..\ResupplyCalculator.Domain\ResupplyCalculator.Domain.csproj" />

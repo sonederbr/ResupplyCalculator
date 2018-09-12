@@ -3,7 +3,6 @@ using Microsoft.Extensions.DependencyInjection;
 using ResupplyCalculator.Application;
 using ResupplyCalculator.Domain.Configuration;
 using ResupplyCalculator.Domain.Interfaces;
-using ResupplyCalculator.Infra.Data.Helper;
 using ResupplyCalculator.Infra.Data.Repository;
 using System;
 using System.IO;

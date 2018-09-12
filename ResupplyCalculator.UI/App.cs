@@ -19,7 +19,7 @@ namespace ResupplyCalculator.UI
 
         public void Run()
         {
-            Console.WriteLine($"This is a console application for {_config.SwApiUrl}");
+            Console.WriteLine($"{_config.ConsoleName}. This is a console application for {_config.SwApiUrl}");
             _application.Run();
             Console.ReadKey();
         }

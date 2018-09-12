@@ -5,9 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ResupplyCalculator.CrossCutting.Mapper\ResupplyCalculator.CrossCutting.Mapper.csproj" />
     <ProjectReference Include="..\ResupplyCalculator.Domain\ResupplyCalculator.Domain.csproj" />
-    <ProjectReference Include="..\ResupplyCalculator.Infra.Data\ResupplyCalculator.Infra.Data.csproj" />
   </ItemGroup>
 
 </Project>

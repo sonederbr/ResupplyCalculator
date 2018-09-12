@@ -1,11 +1,10 @@
-﻿using System.Collections;
+﻿using ResupplyCalculator.Domain.Models.Starships;
 using System.Collections.Generic;
-using ResupplyCalculator.Domain.Models.Starships;
 
 namespace ResupplyCalculator.Domain.Interfaces
 {
     public interface IStarShipApiRepository
     {
-        ICollection<Starship> GetAll();
+        IEnumerable<Starship> GetAll();
     }
 }

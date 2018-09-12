@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using ResupplyCalculator.Application;
 using ResupplyCalculator.Domain.Configuration;
 using ResupplyCalculator.Domain.Interfaces;
+using ResupplyCalculator.Infra.Data.Helper;
 using ResupplyCalculator.Infra.Data.Repository;
 using System;
 using System.IO;
@@ -21,7 +22,7 @@ namespace ResupplyCalculator.Infra.CrossCutting.IoC
             serviceCollection.AddOptions();
             serviceCollection.Configure<AppSettings>(configuration.GetSection("Configuration"));
             ConfigureConsole(configuration);
-
+            
             serviceCollection.AddSingleton<IStarShipApplication, StarShipApplication>();
             serviceCollection.AddSingleton<IStarShipApiRepository, StarShipApiRepository>();
 

@@ -1,28 +1,39 @@
-﻿using System.Collections.Generic;
-using Microsoft.Extensions.Options;
-using RestSharp;
+﻿using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
+using ResupplyCalculator.CrossCutting.Mapper.DtoToDomain;
+using ResupplyCalculator.CrossCutting.Mapper.Dto;
 using ResupplyCalculator.Domain.Configuration;
 using ResupplyCalculator.Domain.Interfaces;
 using ResupplyCalculator.Domain.Models.Starships;
+using ResupplyCalculator.Infra.Data.Helper;
+using System.Collections.Generic;
 
 namespace ResupplyCalculator.Infra.Data.Repository
 {
-    public class StarShipApiRepository : IStarShipApiRepository
+    public class StarShipApiRepository : BaseRestSharp, IStarShipApiRepository
     {
-        private readonly AppSettings _config;
+        public StarShipApiRepository(IOptions<AppSettings> config) : base(config) { }
 
-        public StarShipApiRepository(IOptions<AppSettings> config)
+        public IEnumerable<Starship> GetAll()
         {
-            _config = config.Value;
-        }
+            var starships = new List<Starship>();
+            var starshipDto = new SwApiDto();
+            var next = string.Empty;
+            do
+            {
+                var response = Execute(next);
+                var content = response.Content;
 
-        public ICollection<Starship> GetAll()
-        {
-            IRestClient client = new RestClient(_config.SwApiUrl);
-            IRestRequest request = new RestRequest(Method.GET) { RequestFormat =  DataFormat.Json };
-            var result = client.Execute(request);
-           
-            return new List<Starship>();
+                if (!response.IsSuccessful) continue;
+
+                starshipDto = JsonConvert.DeserializeObject<SwApiDto>(content);
+                MapDtoToDomain.MapStarship(starshipDto.Results, starships);
+                next = starshipDto.Next;
+
+            } while (starships.Count < starshipDto.Count);
+
+            
+            return starships;
         }
     }
 }

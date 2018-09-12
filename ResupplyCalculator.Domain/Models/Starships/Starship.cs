@@ -1,30 +1,31 @@
 ﻿using System;
-using System.Reflection.Metadata.Ecma335;
+using ResupplyCalculator.Domain.Enums;
 
 namespace ResupplyCalculator.Domain.Models.Starships
 {
     public class Starship
     {
-        public string MGLT { get; private set; }
-        public string CargoCapacity { get; private set; }
-        public string Consumables { get; private set; }
-        public string CostInCredits { get; set; }
-        public DateTime Created { get; set; }
-        public string Crew { get; set; }
-        public DateTime Edited { get; set; }
-        public string HyperdriveRating { get; set; }
-        public string Length { get; set; }
-        public string Manufacturer { get; set; }
-        public string MaxAtmospheringSpeed { get; set; }
-        public string Model { get; set; }
-        public string Name { get; set; }
-        public string Passengers { get; set; }
-        public string StarshipClass { get; set; }
-        public string Url { get; set; }
+        private const short ErrorNumber = -1;
 
-        public long CalculateConsumable(long distance)
+        public Starship(string name, int mglt, string model, Consumable consumable)
         {
-            return 10;
+            Name = name;
+            MGLT = mglt;
+            Model = model;
+            Consumable = consumable;
+        }
+
+        public string Name { get; private set; }
+        public int MGLT { get; private set; }
+        public string Model { get; set; }
+        public Consumable Consumable { get; private set; }
+
+        public long CalculateConsumable(long distanceMGLT)
+        {
+            if (Consumable.Period == EPeriod.Unknown || MGLT == 0)
+                return ErrorNumber;
+            
+            return Math.Abs(distanceMGLT / (Consumable.GetTotalHours() * MGLT));
         }
     }
 }

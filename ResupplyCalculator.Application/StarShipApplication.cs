@@ -13,23 +13,22 @@ namespace ResupplyCalculator.Application
 
         public void Run()
         {
-            Console.WriteLine("Input the MGLT distance for calculate supply:"); 
-            if (long.TryParse(Console.ReadLine(), out var distanceMGLT))
-                CalculateDistance(distanceMGLT);
-            else
-                InputDistance();
-
+            InputDistance();
             Console.ReadLine();
         }
 
         private void InputDistance()
         {
-            Console.WriteLine("MGLT distance must be only number.");
-            Console.WriteLine("Input the MGLT distance for calculate supply:"); 
+            Console.WriteLine("Input the MGLT distance for calculate supply:");
             if (long.TryParse(Console.ReadLine(), out var distanceMGLT))
+            {
                 CalculateDistance(distanceMGLT);
+            }
             else
+            {
+                Console.WriteLine("MGLT distance must be only number.");
                 InputDistance();
+            }
         }
 
         private void CalculateDistance(long distanceMGLT)
